@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Todas as Notas</h1>
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Sobrenome</th>
+                            <th>Nota 1</th>
+                            <th>Nota 2</th>
+                            <th>Nota 3</th>
+                            <th>Nota 4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for notas in nota %}
+                        <tr>
+                            <td>{{ notas.nome }}</td>
+                            <td>{{ notas.sobrenome }}</td>
+                            <td>{{ notas.nota1 }}</td>
+                            <td>{{ notas.nota2 }}</td>
+                            <td>{{ notas.nota3 }}</td>
+                            <td>{{ notas.nota4 }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

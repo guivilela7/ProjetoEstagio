@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Cadastre um Novo Aluno</h1>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <form method="POST" action="" class="border p-4 mt-2">
+                {{ form_criar_aluno.csrf_token }}
+                <legend>Cadastro</legend>
+                  <fieldset>
+                      <div class="form-group">
+                          {{ form_criar_aluno.nome.label(class="form-control-label") }}
+                          {% if form_criar_aluno.nome.errors %}
+                            {{ form_criar_aluno.nome(class="form-control is-invalid") }}
+                          <div class="invalid-feedback">
+                            {% for erro in form_criar_aluno.nome.errors %}
+                                {{ erro }}
+                            {% endfor %}
+                          </div>
+
+                          {% else %}
+                            {{ form_criar_aluno.nome(class="form-control") }}
+                          {% endif %}
+
+                      </div>
+                      <div class="form-group">
+                          {{ form_criar_aluno.sobrenome.label(class="form-control-label") }}
+                          {% if form_criar_aluno.sobrenome.errors %}
+                            {{ form_criar_aluno.sobrenome(class="form-control is-invalid") }}
+                          <div class="invalid-feedback">
+                            {% for erro in form_criar_aluno.sobrenome.errors %}
+                                {{ erro }}
+                            {% endfor %}
+                          </div>
+
+                          {% else %}
+                            {{ form_criar_aluno.sobrenome(class="form-control") }}
+                          {% endif %}
+                      </div>
+                  </fieldset>
+                  {{ form_criar_aluno.botao_submit_criar_aluno(class="btn btn-primary mt-2") }}
+              </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+{% endblock %}
