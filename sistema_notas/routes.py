@@ -1,4 +1,4 @@
-from flask import render_template, flash, url_for, redirect, request
+from flask import render_template, flash, url_for, redirect
 from sistema_notas import app, database
 from sistema_notas.forms import FormCriarAluno, FormNotas, FormPesquisarAluno
 from sistema_notas.models import Aluno, Notas

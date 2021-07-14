@@ -36,5 +36,3 @@ class FormPesquisarAluno(FlaskForm):
     nome_aluno = StringField('Nome Aluno', validators=[DataRequired()], default='')
     sobrenome_aluno = StringField('Sobrenome Aluno', validators=[Optional()], default='')
     botao_submit_pesquisa = SubmitField('Pesquisar Aluno')
-
-
